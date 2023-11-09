@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>cricketgame project</title>
+<style>
+  
+    body{display: flex;
+        text-align: center;
+        justify-content: center;
+       box-sizing: border-box;
+       margin: 0%;
+       padding: 0%;
+        background-color: rgb(218, 236, 231);
+    }
+    #heading{
+        text-align: center;
+        font-size: 8ch;
+        margin-bottom: 50px;
+    }
+  .ball.bat.image{
+        width: 100px;
+        height: 100px;
+       
+    }
+     .cricket{
+       width: 30%;
+        margin: auto;
+        padding: 5px;
+    } 
+    #st,#ball,#bat{
+        background-color: bisque;
+        border: 5px solid black;
+          display: block;
+          justify-content: center;
+          align-items: center;
+          border-radius: 70%;
+         font-size: xx-large;
+     
+    }
+   
+    .bat,.ball{
+        box-shadow: 10px 10px 100px;
+        margin: 30px;
+       display: flex;
+       justify-content: space-between;
+      
+    }
+    
+    .stump{
+        box-shadow: 10px 10px 100px;
+        margin: 30px;
+       display: flex;
+       justify-content: space-between;
+        
+    }
+</style>
+</head>
+<body>
+    
+ 
+    <div class="cricket">
+        <h1 id="heading"> Bat Ball And Stump</h1>
+        <h1>choose any of the three buttons</h2>
+ <div class="bat">
+    <button id="bat" onclick="
+let randomchoidce1=Math.random()*3;
+let computerchoice1;
+if(randomchoidce1>0 && randomchoidce1<=1){
+    computerchoice1='Bat';
+}else if(randomchoidce1>1 && randomchoidce1<=2){
+    computerchoice1='Ball';
+}else{
+    computerchoice1='Stump';
+}
+let resultmsg1;
+if(computerchoice1==='Ball'){
+    resultmsg1='You Won';
+    score.win++;
+}else if(computerchoice1==='Bat'){
+    resultmsg1=`It's a tie !`;
+    score.tie++;
+}else{
+    resultmsg1='You Lose';
+    score.lost++;
+}
+alert(`You have choosen Bat and computer's choice is : ${computerchoice1} . Hence ${resultmsg1}
+win: ${ score.win}
+lost:${ score.lost}
+tie:${ score.tie}`);
+
+">Bat</button>
+<img src="bat.jpg" alt="">
+</div>
+<div class="ball">
+    <button id="ball" onclick="
+    let randomchoidce2=Math.random()*3;
+    let computerchoice2;
+    if(randomchoidce2>0 && randomchoidce2<=1){
+        computerchoice2='Bat';
+    }else if(randomchoidce2>1 && randomchoidce2<=2){
+        computerchoice2='Ball';
+    }else{
+        computerchoice2='Stump';
+    }
+    let resultmsg2;
+    if(computerchoice2==='Ball'){
+        resultmsg2=`It's a tie !`;
+        score.tie++;
+    }else if(computerchoice2==='Bat'){
+        resultmsg2='You Lose';
+        score.lost++;
+    }else{
+        resultmsg2='You Won';
+        score.win++;
+    }
+    alert(`You have choosen Ball and computer's choice is : ${computerchoice2} . Hence ${resultmsg2} 
+     win: ${ score.win}
+     lost:${ score.lost}
+      tie:${ score.tie}`);
+    
+    ">Ball</button>
+    <img src="ball.jpg" alt="">
+</div>
+<div class="stump">
+    <button id="st" onclick="
+    let randomchoidce=Math.random()*3;
+    let computerchoice;
+    if(randomchoidce>0 && randomchoidce<=1){
+        computerchoice='Bat';
+    }else if(randomchoidce>1 && randomchoidce<=2){
+        computerchoice='Ball';
+    }else{
+        computerchoice='Stump';
+    }
+    let resultmsg;
+    if(computerchoice==='Ball'){
+        resultmsg=`You Lose`;
+        score.lost++;
+    }else if(computerchoice==='Bat'){
+        resultmsg='You Won';
+        score.win++;
+    }else{
+        resultmsg=`It's a tie ! `;
+        score.tie++;
+    }
+    alert(`You have choosen Stump and computer's choice is : ${computerchoice} . Hence ${resultmsg}
+    win: ${ score.win}
+    lost:${ score.lost}
+    tie:${ score.tie}`);
+    
+    ">Stump</button>
+    <img src="stump.jpg" alt="">
+</div>
+</div>
+    <script>
+        let score={ // object creation and it's uses in the js
+            win:0,
+            lost:0,
+            tie:0,
+                 };
+    </script>
+</body>
+</html>
